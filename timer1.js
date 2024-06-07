@@ -1,8 +1,9 @@
+const userInput = require("./userInput");
+const numberCheck = require("./numberFilter");
+
+// Function creates a sound after
 const timer = function (arr) {
   for (let seconds of arr) {
-    if (seconds < 0) {
-      continue;
-    }
     console.log(seconds);
     seconds *= 1000;
     setTimeout(() => {
@@ -11,18 +12,9 @@ const timer = function (arr) {
   }
 };
 
-const numberCheck = function (arr) {
-  let newArr = [];
-  for (let element of arr) {
-    element = Number(element);
-    if (!Number.isNaN(element)) {
-      newArr.push(element);
-    }
-  }
-  return newArr;
-};
+module.exports = timer;
 
 // Test Code
 
-const userArr = process.argv.slice(2);
+const userArr = userInput();
 timer(numberCheck(userArr));
