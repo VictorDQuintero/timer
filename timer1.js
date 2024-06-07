@@ -1,17 +1,17 @@
 // FUNCTION IMPLEMENTATION
 
-/* 
-"Implement an alarm clock / timer which will beep after a specified amount of time has passed. 
+/*
+"Implement an alarm clock / timer which will beep after a specified amount of time has passed.
 The user can specify an unlimited number of alarms using command line arguments"
 */
 
 // Function returns a shallow copy of the process.argv array ( returns only the user provided arguments).
-const userInput = function () {
+const userInput = function() {
   return process.argv.slice(2);
 };
 
 // Function takes an array and after turning its elements into numbers it returns an array with only positive numbers
-const numberFilter = function (arr) {
+const numberFilter = function(arr) {
   let newArr = [];
   for (let element of arr) {
     element = Number(element); // turns every element into a number data type
@@ -24,7 +24,7 @@ const numberFilter = function (arr) {
 };
 
 // Function takes array of positive numbers/seconds, turns them into milliseconds and sets an alarm that will beep/make a sound after the specified number of ms has passed
-const timer = function (arr) {
+const timer = function(arr) {
   for (let seconds of arr) {
     console.log(seconds);
     seconds *= 1000;
